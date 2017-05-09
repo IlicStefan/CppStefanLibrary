@@ -1,15 +1,15 @@
-# Komentari
-
 PROGRAM = test
 CC = g++
 CFLAGS = -std=c++14 -Wall
 LDFLAGS = -lm
-OBJS =
 
-test: mainTest.o MathTest.o
+test: mainTest.o MathTest.o FractionTest.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 mainTest.o: mainTest.cpp
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+FractionTest.o: FractionTest.cpp
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 MathTest.o: MathTest.cpp
