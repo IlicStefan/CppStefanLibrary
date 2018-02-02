@@ -1,10 +1,10 @@
 #ifndef FRACTION_HPP_
 #define FRACTION_HPP_
 
-#include<iostream>
-#include<stdexcept>
-#include<utility>
-#include"Math.hpp"
+#include <iostream>
+#include <stdexcept>
+#include <utility>
+#include "Math.hpp"
 
 namespace stefan {
   
@@ -44,24 +44,6 @@ namespace stefan {
     void setFraction(const Integer & numerator, const Integer & denominator) {
       m_numerator = numerator;
       m_denominator = denominator;
-      fixData();
-    }
-    
-    void setFraction(const Integer & numerator, Integer && denominator) {
-      m_numerator = numerator;
-      m_denominator = std::move(denominator);
-      fixData();
-    }
-    
-    void setFraction(Integer && numerator, const Integer & denominator) {
-      m_numerator = std::move(numerator);
-      m_denominator = denominator;
-      fixData();
-    }
-    
-    void setFraction(Integer && numerator, Integer && denominator) {
-      m_numerator = std::move(numerator);
-      m_denominator = std::move(denominator);
       fixData();
     }
     
